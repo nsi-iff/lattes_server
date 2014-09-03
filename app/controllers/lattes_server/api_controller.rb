@@ -8,6 +8,12 @@ module LattesServer
       render json: { id: cnpq_id }
     end
 
+    def curriculo_compactado
+      cnpq_id = JSON.parse(request.body.read)['id']
+      zipped_curriculum = client.get_curriculo_compactado(cnpq_id)
+      render json: { curriculo: zipped_curriculum }
+    end
+
     private
 
     def client
