@@ -13,6 +13,3 @@ gemspec
 # To use debugger
 # gem 'debugger'
 
-gem 'lattes_api', git: 'https://github.com/nsi-iff/lattes_api.git'
-gem 'savon', require: false
-gem 'rubyzip', require: false

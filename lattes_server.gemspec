@@ -7,11 +7,11 @@ require "lattes_server/version"
 Gem::Specification.new do |s|
   s.name        = "lattes_server"
   s.version     = LattesServer::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of LattesServer."
-  s.description = "TODO: Description of LattesServer."
+  s.authors     = ["Rodrigo Manhães"]
+  s.email       = ["rmanhaes@gmail.com  "]
+  s.homepage    = "https://github.com/nsi-iff/lattes_server"
+  s.summary     = "Lattes for the masses."
+  s.description = "Lattes for the masses."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
