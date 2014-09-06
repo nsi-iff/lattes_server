@@ -1,6 +1,9 @@
+require 'lattes_api'
+
 module LattesServer
   class ApiController < ApplicationController
     respond_to :json
+    rescue_from LattesApi::AccessDenied, with: :access_denied
 
     def id
       cpf = JSON.parse(request.body.read)['cpf']
@@ -18,6 +21,10 @@ module LattesServer
 
     def client
       @client ||= LattesApi::Api.new
+    end
+
+    def access_denied
+      render json: { access_denied: true }, status: :forbidden
     end
   end
 end
