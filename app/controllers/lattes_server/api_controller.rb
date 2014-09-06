@@ -17,7 +17,7 @@ module LattesServer
     private
 
     def client
-      @client ||= LattesApi::Client.new
+      @client ||= LattesApi::Api.new
     end
   end
 end

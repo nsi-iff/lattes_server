@@ -8,7 +8,7 @@ describe 'getIdentificadorCNPq(cpf)' do
     client = double
     allow(client).to receive(:get_identificador_cnpq).with(cpf).
       and_return(cnpq_id)
-    allow(LattesApi::Client).to receive(:new).and_return(client)
+    allow(LattesApi::Api).to receive(:new).and_return(client)
 
     get 'lattes_server/id', {}, { 'RAW_POST_DATA' => { cpf: cpf }.to_json }
     expect(response).to be_success
@@ -19,7 +19,7 @@ describe 'getIdentificadorCNPq(cpf)' do
     client = double
     allow(client).to receive(:get_curriculo_compactado).with(cnpq_id).
       and_return(:zipped_curriculum)
-    allow(LattesApi::Client).to receive(:new).and_return(client)
+    allow(LattesApi::Api).to receive(:new).and_return(client)
 
     get 'lattes_server/curriculo_compactado', {},
       { 'RAW_POST_DATA' => { id: cnpq_id }.to_json }
